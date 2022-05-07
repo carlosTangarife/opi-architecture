@@ -13,9 +13,16 @@
         "polyfills": "apps/admin/src/polyfills.ts",
         "tsConfig": "apps/admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
+        "assets": [
+          "apps/admin/src/favicon.ico",
+          "apps/admin/src/assets",
+          "apps/admin/src/assets/theme/lara-light-indigo/theme.css"
+        ],
         "styles": ["apps/admin/src/styles.scss"],
-        "scripts": []
+        "scripts": [
+          "node_modules/prismjs/prism.js",
+          "node_modules/prismjs/components/prism-typescript.js"
+        ]
       },
       "configurations": {
         "production": {
