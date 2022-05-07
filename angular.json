@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "admin": "apps/admin",
-    "admin-e2e": "apps/admin-e2e"
+    "admin-e2e": "apps/admin-e2e",
+    "user": "libs/user"
   }
 }
