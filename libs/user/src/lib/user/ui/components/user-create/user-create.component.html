@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-12">
+    <form [formGroup]="userForm" autocomplete="off" novalidate (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="firstName" name="firstName" id="firstName" placeholder="first name">
+      <input type="text" formControlName="lastName" name="lastName" id="lastName" placeholder="last name">
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid" matRipple>CREATE</button>
+    </form>
+  </div>
+</div>
