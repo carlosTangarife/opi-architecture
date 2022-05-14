@@ -6,8 +6,6 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent {
 
-    menuMode = 'static';
-
     constructor(private primengConfig: PrimeNGConfig) { }
 
     ngOnInit() {

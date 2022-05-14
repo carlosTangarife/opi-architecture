@@ -45,15 +45,11 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     topMenuButtonClick!: boolean;
 
-    configActive!: boolean;
-
-    configClick!: boolean;
-
     config!: AppConfig;
 
     subscription!: Subscription;
 
-    constructor(public renderer: Renderer2, public app: AppComponent, public configService: ConfigService) { }
+    constructor(public renderer: Renderer2, public configService: ConfigService) { }
 
     ngOnInit() {
         this.config = this.configService.config;
@@ -62,7 +58,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     ngAfterViewInit() {
         // hides the overlay menu and top menu if outside is clicked
-        this.documentClickListener = this.renderer.listen('body', 'click', (event) => {
+        this.documentClickListener = this.renderer.listen('body', 'click', () => {
             if (!this.isDesktop()) {
                 if (!this.menuClick) {
                     this.menuActiveMobile = false;
@@ -73,19 +69,11 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
                 }
             }
             else {
-                if (!this.menuClick && this.isOverlay()) {
-                    this.menuInactiveDesktop = true;
-                }
                 if (!this.menuClick){
                     this.overlayMenuActive = false;
                 }
             }
 
-            if (this.configActive && !this.configClick) {
-                this.configActive = false;
-            }
-
-            this.configClick = false;
             this.menuClick = false;
             this.topMenuButtonClick = false;
         });
@@ -95,17 +83,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
         this.menuClick = true;
 
         if (this.isDesktop()) {
-            if (this.app.menuMode === 'overlay') {
-                if(this.menuActiveMobile === true) {
-                    this.overlayMenuActive = true;
-                }
-
-                this.overlayMenuActive = !this.overlayMenuActive;
-                this.menuActiveMobile = false;
-            }
-            else if (this.app.menuMode === 'static') {
-                this.staticMenuInactive = !this.staticMenuInactive;
-            }
+            this.staticMenuInactive = !this.staticMenuInactive;
         }
         else {
             this.menuActiveMobile = !this.menuActiveMobile;
@@ -139,22 +117,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
             this.topMenuActive = false;
             this.topMenuLeaving = false;
         }, 1);
-    }
-
-    onMenuClick() {
-        this.menuClick = true;
-    }
-
-    onConfigClick(event: any) {
-        this.configClick = true;
-    }
-
-    isStatic() {
-        return this.app.menuMode === 'static';
-    }
-
-    isOverlay() {
-        return this.app.menuMode === 'overlay';
     }
 
     isDesktop() {
