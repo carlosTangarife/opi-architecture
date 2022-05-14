@@ -7,13 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmptyComponent } from './empty/empty.component';
 import { ErrorComponent } from './error/error.component';
 import { FileComponent } from './file/file.component';
-import { FloatlabelComponent } from './floatlabel/floatlabel.component';
 import { FloatLayoutComponent } from './float-layout/float-layout.component';
 import { FloatLabelComponent } from './float-label/float-label.component';
 import { FormLayoutComponent } from './form-layout/form-layout.component';
+import { PrimengModule } from './primeng.module';
 
 @NgModule({
-	imports: [CommonModule],
+	imports: [CommonModule, PrimengModule],
 	declarations: [
 		ButtonComponent,
 		InputComponent,
@@ -22,7 +22,6 @@ import { FormLayoutComponent } from './form-layout/form-layout.component';
 		EmptyComponent,
 		ErrorComponent,
 		FileComponent,
-		FloatlabelComponent,
 		FloatLayoutComponent,
 		FloatLabelComponent,
 		FormLayoutComponent,
@@ -35,7 +34,6 @@ import { FormLayoutComponent } from './form-layout/form-layout.component';
 		EmptyComponent,
 		ErrorComponent,
 		FileComponent,
-		FloatlabelComponent,
 		FloatLayoutComponent,
 		FloatLabelComponent,
 		FormLayoutComponent,

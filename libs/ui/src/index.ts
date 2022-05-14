@@ -14,8 +14,6 @@ export * from './lib/error/error.component';
 
 export * from './lib/file/file.component';
 
-export * from './lib/floatlabel/floatlabel.component';
-
 export * from './lib/float-layout/float-layout.component';
 
 export * from './lib/float-label/float-label.component';

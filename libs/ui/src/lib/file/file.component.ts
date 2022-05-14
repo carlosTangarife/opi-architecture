@@ -1,12 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
 	selector: 'opi-file',
 	templateUrl: './file.component.html',
 	styleUrls: ['./file.component.scss'],
+	providers: [MessageService],
 })
-export class FileComponent implements OnInit {
-	constructor() {}
+export class FileComponent {
+	uploadedFiles: any[] = [];
 
-	ngOnInit(): void {}
+	constructor(private messageService: MessageService) {}
+
+	onUpload(event: any) {
+		for (const file of event.files) {
+			this.uploadedFiles.push(file);
+		}
+
+		this.messageService.add({
+			severity: 'info',
+			summary: 'Success',
+			detail: 'File Uploaded',
+		});
+	}
 }
