@@ -5,16 +5,16 @@
       </ng-template>
   </p-toolbar>
 
-  <p-table #dt 
-      [value]="products" 
-      [rows]="10" 
-      [paginator]="true" 
-      [globalFilterFields]="['firstName', 'lastName']" 
+  <p-table #dt
+      [value]="products"
+      [rows]="10"
+      [paginator]="true"
+      [globalFilterFields]="['firstName', 'lastName']"
       responsiveLayout="scroll"
-      [(selection)]="selectedProducts" 
-      [rowHover]="true" 
+      [(selection)]="selectedProducts"
+      [rowHover]="true"
       dataKey="id"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [showCurrentPageReport]="true">
 
       <ng-template pTemplate="caption">
