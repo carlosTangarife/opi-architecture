@@ -1,4 +1,28 @@
-<div class="layout-wrapper">
+<!-- <div
+	class="layout-wrapper layout-static"
+	[ngClass]="{
+		'layout-overlay-sidebar-active': overlayMenuActive,
+		'layout-static-sidebar-inactive': staticMenuInactive,
+		'layout-mobile-sidebar-active': menuActiveMobile
+	}"
+>
+	<opi-header></opi-header>
+	<div class="layout-sidebar">
+		<opi-menu></opi-menu>
+	</div>
+	<div class="layout-main-container">
+		<div class="layout-main">
+			<router-outlet></router-outlet>
+		</div>
+		<opi-footer></opi-footer>
+	</div>
+	<div *ngIf="menuActiveMobile" class="layout-mask p-component-overlay"></div>
+</div> -->
+
+
+<div
+	class="layout-wrapper layout-static"
+>
 	<opi-header></opi-header>
 	<div class="layout-sidebar">
 		<opi-menu></opi-menu>

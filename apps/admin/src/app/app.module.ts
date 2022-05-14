@@ -90,11 +90,6 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
 import { AppCodeModule } from './components/app-code/app.code.component';
 import { AppComponent } from './app.component';
-import { AppMainComponent } from './app.main.component';
-import { AppTopBarComponent } from './app.topbar.component';
-import { AppFooterComponent } from './app.footer.component';
-import { AppMenuComponent } from './app.menu.component';
-import { AppMenuitemComponent } from './app.menuitem.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormLayoutComponent } from './components/formlayout/formlayout.component';
@@ -114,9 +109,11 @@ import { MenuService } from './service/app.menu.service';
 import { ConfigService } from './service/app.config.service';
 import { ErrorComponent } from './components/error/error.component';
 import { AccessComponent } from './components/access/access.component';
+import { LayoutModule } from '@opi/layout';
 
 @NgModule({
     imports: [
+		LayoutModule,
         BrowserModule,
         FormsModule,
         AppRoutingModule,
@@ -207,11 +204,6 @@ import { AccessComponent } from './components/access/access.component';
     ],
     declarations: [
         AppComponent,
-        AppMainComponent,
-        AppTopBarComponent,
-        AppFooterComponent,
-        AppMenuComponent,
-        AppMenuitemComponent,
         DashboardComponent,
         FormLayoutComponent,
         FloatLabelComponent,
