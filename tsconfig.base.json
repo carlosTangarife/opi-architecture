@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@opi/layout": ["libs/layout/src/index.ts"],
       "@opi/user": ["libs/user/src/index.ts"]
     }
   },
