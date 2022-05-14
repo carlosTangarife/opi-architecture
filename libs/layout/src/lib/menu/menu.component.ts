@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'Dashboard',
                         icon: 'pi pi-fw pi-home',
-                        routerLink: ['/'],
+                        routerLink: ['/dashboard'],
                     },
                 ],
             },
@@ -25,29 +25,39 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'Form Layout',
                         icon: 'pi pi-fw pi-id-card',
-                        routerLink: ['/uikit/formlayout'],
+                        routerLink: ['/formlayout'],
                     },
                     {
                         label: 'Input',
                         icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['/uikit/input'],
+                        routerLink: ['/input'],
                     },
                     {
                         label: 'Float Label',
                         icon: 'pi pi-fw pi-bookmark',
-                        routerLink: ['/uikit/floatlabel'],
+                        routerLink: ['/floatlabel'],
                     },
                     {
                         label: 'Button',
                         icon: 'pi pi-fw pi-mobile',
-                        routerLink: ['/uikit/button'],
+                        routerLink: ['/button'],
                         class: 'rotated-icon',
                     },
                     {
                         label: 'File',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/uikit/file'],
+                        routerLink: ['/file'],
                     }
+                ],
+            },
+			{
+                label: 'User',
+                items: [
+                    {
+                        label: 'User',
+                        icon: 'pi pi-fw pi-home',
+                        routerLink: ['/user'],
+                    },
                 ],
             },
             {

@@ -7,13 +7,11 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { LayoutRoutingModule } from './layout.routing';
 import { MenuModule } from 'primeng/menu';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		// LayoutRoutingModule,
-		RouterModule,
+		LayoutRoutingModule,
 		MenuModule
 	],
 	declarations: [

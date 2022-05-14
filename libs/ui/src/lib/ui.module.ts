@@ -10,6 +10,7 @@ import { FileComponent } from './file/file.component';
 import { FloatlabelComponent } from './floatlabel/floatlabel.component';
 import { FloatLayoutComponent } from './float-layout/float-layout.component';
 import { FloatLabelComponent } from './float-label/float-label.component';
+import { FormLayoutComponent } from './form-layout/form-layout.component';
 
 @NgModule({
 	imports: [CommonModule],
@@ -24,6 +25,7 @@ import { FloatLabelComponent } from './float-label/float-label.component';
 		FloatlabelComponent,
 		FloatLayoutComponent,
 		FloatLabelComponent,
+		FormLayoutComponent,
 	],
 	exports: [
 		ButtonComponent,
@@ -36,6 +38,7 @@ import { FloatLabelComponent } from './float-label/float-label.component';
 		FloatlabelComponent,
 		FloatLayoutComponent,
 		FloatLabelComponent,
+		FormLayoutComponent,
 	],
 })
 export class UiModule {}
