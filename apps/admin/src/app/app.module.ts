@@ -102,7 +102,6 @@ import { FloatLabelComponent } from './components/floatlabel/floatlabel.componen
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { FileComponent } from './components/file/file.component';
-import { DocumentationComponent } from './components/documentation/documentation.component';
 
 import { CountryService } from './service/countryservice';
 import { CustomerService } from './service/customerservice';
@@ -219,7 +218,6 @@ import { AccessComponent } from './components/access/access.component';
         InputComponent,
         ButtonComponent,
         FileComponent,
-        DocumentationComponent,
         ErrorComponent,
         AccessComponent,
     ],

@@ -1,9 +1,5 @@
-import { Component, AfterViewInit, OnDestroy, Renderer2, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { AppComponent } from './app.component';
-import { ConfigService } from './service/app.config.service';
-import { AppConfig } from './api/appconfig';
-import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-main',
@@ -21,7 +17,7 @@ import { Subscription } from 'rxjs';
         ])
     ]
 })
-export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
+export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     public menuInactiveDesktop!: boolean;
 
@@ -37,24 +33,13 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     public topMenuLeaving!: boolean;
 
-    public theme!: string;
-
     documentClickListener!: () => void;
 
     menuClick!: boolean;
 
     topMenuButtonClick!: boolean;
 
-    config!: AppConfig;
-
-    subscription!: Subscription;
-
-    constructor(public renderer: Renderer2, public configService: ConfigService) { }
-
-    ngOnInit() {
-        this.config = this.configService.config;
-        this.subscription = this.configService.configUpdate$.subscribe(config => this.config = config);
-    }
+    constructor(public renderer: Renderer2) { }
 
     ngAfterViewInit() {
         // hides the overlay menu and top menu if outside is clicked
@@ -134,11 +119,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
     ngOnDestroy() {
         if (this.documentClickListener) {
             this.documentClickListener();
-        }
-
-
-        if (this.subscription) {
-            this.subscription.unsubscribe();
         }
     }
 }
