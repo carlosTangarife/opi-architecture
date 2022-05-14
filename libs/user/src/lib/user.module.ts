@@ -37,5 +37,6 @@ import { UserCreateComponent, UserDetailsComponent, UserListComponent } from './
 export class UserModule {
   constructor() {
     CacheInvalidations.set(CreateUserCommandHandler.name, [GetUsersQueryHandler.name])
+    CacheInvalidations.set(DeleteUserCommandHandler.name, [GetUsersQueryHandler.name])
   }
  }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { CreateUserCommand, CreateUserCommandHandler } from '../../../application';
+import { CreateUserCommand, CreateUserCommandHandler, GetUserQuery, GetUserQueryHandler } from '../../../application';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from '../../../domain';
 
 @Component({
   selector: 'opi-user-create',
@@ -13,17 +15,24 @@ export class UserCreateComponent implements OnInit {
 
   constructor(
     private readonly createUserCommandHandler: CreateUserCommandHandler,
-    private readonly fb: FormBuilder
+    private readonly getUserQueryHandler: GetUserQueryHandler,
+    private readonly fb: FormBuilder,
+    private readonly router: Router,
+    private readonly route: ActivatedRoute,
+
   ) { }
 
-  ngOnInit(): void {
-    this.buildForm();
+  async ngOnInit(): Promise<void> {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const query: GetUserQuery = { id }
+    const user = await this.getUserQueryHandler.execute(query);
+    this.buildForm(user);
   }
 
-  buildForm(): void {
+  buildForm(user: UserModel): void {
     this.userForm = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', Validators.required],
+      firstName: [user.firstName || '', [Validators.required]],
+      lastName: [user.lastName || '', Validators.required],
     });
   }
 
@@ -33,5 +42,6 @@ export class UserCreateComponent implements OnInit {
       lastName: this.userForm.value.lastName
     }
     await this.createUserCommandHandler.execute(command);
+    this.router.navigate(["user"])
   }
 }
