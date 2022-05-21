@@ -16,6 +16,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@opi/layout": ["libs/layout/src/index.ts"],
+			"@opi/opi-http": ["libs/opi-http/src/index.ts"],
 			"@opi/ui": ["libs/ui/src/index.ts"],
 			"@opi/user": ["libs/user/src/index.ts"]
 		}

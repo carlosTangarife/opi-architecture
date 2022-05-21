@@ -1,0 +1,25 @@
+{
+	"projectType": "library",
+	"sourceRoot": "libs/opi-http/src",
+	"prefix": "opi",
+	"targets": {
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/opi-http"],
+			"options": {
+				"jestConfig": "libs/opi-http/jest.config.ts",
+				"passWithNoTests": true
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": [
+					"libs/opi-http/**/*.ts",
+					"libs/opi-http/**/*.html"
+				]
+			}
+		}
+	},
+	"tags": []
+}

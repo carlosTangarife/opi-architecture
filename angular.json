@@ -4,6 +4,7 @@
 		"admin": "apps/admin",
 		"admin-e2e": "apps/admin-e2e",
 		"layout": "libs/layout",
+		"opi-http": "libs/opi-http",
 		"ui": "libs/ui",
 		"user": "libs/user"
 	}
