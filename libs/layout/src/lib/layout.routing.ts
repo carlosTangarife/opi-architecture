@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ButtonComponent, DashboardComponent, FileComponent, FloatLabelComponent, FormLayoutComponent, InputComponent } from '@opi/ui';
+import { AccessComponent, ButtonComponent, DashboardComponent, EmptyComponent, ErrorComponent, FileComponent, FloatLabelComponent, FormLayoutComponent, InputComponent } from '@opi/ui';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
@@ -35,9 +35,7 @@ const routes: Routes = [
 			{
 				path: 'user',
 				loadChildren: () => import('@opi/user').then((m) => m.UserModule),
-			},
-			{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-			{ path: '**', redirectTo: 'dashboard' },
+			}
 		],
 	},
 ];

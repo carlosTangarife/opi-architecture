@@ -1,35 +1,30 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MainComponent } from '@opi/layout';
 import { AccessComponent, EmptyComponent, ErrorComponent } from '@opi/ui';
+
+const ROUTES: Routes = [
+	{
+		path: 'app',
+		loadChildren: () => import('@opi/layout').then((m) => m.LayoutModule),
+
+	},
+	{
+		path: 'access',
+		component: AccessComponent,
+	},
+	{
+		path: 'empty',
+		component: EmptyComponent,
+	},
+	{
+		path: 'error',
+		component: ErrorComponent,
+	},
+	{ path: '', redirectTo: 'app', pathMatch: 'full' },
+	{ path: '**', redirectTo: 'app' },
+];
 @NgModule({
-    imports: [
-        RouterModule.forRoot([
-            {
-                path: '', component: MainComponent,
-				loadChildren: () => import('@opi/layout').then((m) => m.LayoutModule),
-            },
-			{
-				path: 'pages',
-				children:[
-					{
-						path: 'access',
-						component: AccessComponent
-					},
-					{
-						path: 'empty',
-						component: EmptyComponent
-					},
-					{
-						path: 'error',
-						component: ErrorComponent
-					},
-				]
-			},
-            {path: '**', redirectTo: 'pages/notfound'},
-        ], {scrollPositionRestoration: 'enabled', anchorScrolling:'enabled'})
-    ],
-    exports: [RouterModule]
+	imports: [RouterModule.forRoot(ROUTES)],
+	exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

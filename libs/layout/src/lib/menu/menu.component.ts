@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'Dashboard',
                         icon: 'pi pi-fw pi-home',
-                        routerLink: ['/dashboard'],
+                        routerLink: ['/app/dashboard'],
                     },
                 ],
             },
@@ -25,28 +25,28 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'Form Layout',
                         icon: 'pi pi-fw pi-id-card',
-                        routerLink: ['/formlayout'],
+                        routerLink: ['/app/formlayout'],
                     },
                     {
                         label: 'Input',
                         icon: 'pi pi-fw pi-check-square',
-                        routerLink: ['/input'],
+                        routerLink: ['/app/input'],
                     },
                     {
                         label: 'Float Label',
                         icon: 'pi pi-fw pi-bookmark',
-                        routerLink: ['/floatlabel'],
+                        routerLink: ['/app/floatlabel'],
                     },
                     {
                         label: 'Button',
                         icon: 'pi pi-fw pi-mobile',
-                        routerLink: ['/button'],
+                        routerLink: ['/app/button'],
                         class: 'rotated-icon',
                     },
                     {
                         label: 'File',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/file'],
+                        routerLink: ['/app/file'],
                     }
                 ],
             },
@@ -56,7 +56,7 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'User',
                         icon: 'pi pi-fw pi-home',
-                        routerLink: ['/user'],
+                        routerLink: ['/app/user'],
                     },
                 ],
             },
@@ -66,27 +66,27 @@ export class MenuComponent implements OnInit {
                     {
                         label: 'Login',
                         icon: 'pi pi-fw pi-sign-in',
-                        routerLink: ['pages/login'],
+                        routerLink: ['/login'],
                     },
                     {
                         label: 'Error',
                         icon: 'pi pi-fw pi-times-circle',
-                        routerLink: ['pages/error'],
+                        routerLink: ['/error'],
                     },
                     {
                         label: 'Not Found',
                         icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['pages/notfound'],
+                        routerLink: ['/notfound'],
                     },
                     {
                         label: 'Access Denied',
                         icon: 'pi pi-fw pi-lock',
-                        routerLink: ['pages/access'],
+                        routerLink: ['/access'],
                     },
                     {
                         label: 'Empty',
                         icon: 'pi pi-fw pi-circle',
-                        routerLink: ['/pages/empty'],
+                        routerLink: ['/empty'],
                     },
                 ],
             },

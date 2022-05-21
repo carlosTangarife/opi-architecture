@@ -37,11 +37,11 @@ export class UserListComponent implements OnInit {
   }
 
   createProduct(): void {
-    this.router.navigate(["user", "create"]);
+    this.router.navigate(["app", "user", "create"]);
   }
 
   editProduct(product: UserModel) {
-    this.router.navigate(["user", "edit", product.id]);
+    this.router.navigate(["app", "user", "edit", product.id]);
   }
 
   deleteProduct(product: UserModel) {

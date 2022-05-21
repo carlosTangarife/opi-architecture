@@ -19,20 +19,22 @@ export class UserCreateComponent implements OnInit {
     private readonly fb: FormBuilder,
     private readonly router: Router,
     private readonly route: ActivatedRoute,
-
   ) { }
 
   async ngOnInit(): Promise<void> {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    const query: GetUserQuery = { id }
-    const user = await this.getUserQueryHandler.execute(query);
+	let user = undefined;
+	if(id !== 0){
+		const query: GetUserQuery = { id }
+		user = await this.getUserQueryHandler.execute(query);
+	}
     this.buildForm(user);
   }
 
-  buildForm(user: UserModel): void {
+  buildForm(user?: UserModel): void {
     this.userForm = this.fb.group({
-      firstName: [user.firstName || '', [Validators.required]],
-      lastName: [user.lastName || '', Validators.required],
+      firstName: [user?.firstName || '', [Validators.required]],
+      lastName: [user?.lastName || '', Validators.required],
     });
   }
 
@@ -42,6 +44,6 @@ export class UserCreateComponent implements OnInit {
       lastName: this.userForm.value.lastName
     }
     await this.createUserCommandHandler.execute(command);
-    this.router.navigate(["user"])
+    this.router.navigate(["app", "user"])
   }
 }

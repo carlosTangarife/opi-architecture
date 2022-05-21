@@ -12,7 +12,7 @@ import {
     CreateUserCommandHandler, DeleteUserCommandHandler, EditUserCommandHandler, GetUserQueryHandler,
     GetUsersQueryHandler, IUserRepository
 } from './user/application';
-import { UserRepository } from './user/repository/user.repository';
+import { UserRepository } from './user/repository';
 import { UserCreateComponent, UserDetailsComponent, UserListComponent } from './user/ui';
 
 @NgModule({
