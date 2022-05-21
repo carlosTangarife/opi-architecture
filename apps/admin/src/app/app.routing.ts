@@ -1,12 +1,17 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AccessComponent, EmptyComponent, ErrorComponent, LoginComponent } from '@opi/ui';
+import {
+	AccessComponent,
+	EmptyComponent,
+	ErrorComponent,
+	LoginComponent,
+	NotFoundComponent,
+} from '@opi/ui';
 
 const ROUTES: Routes = [
 	{
 		path: 'app',
 		loadChildren: () => import('@opi/layout').then((m) => m.LayoutModule),
-
 	},
 	{
 		path: 'login',
@@ -24,6 +29,9 @@ const ROUTES: Routes = [
 		path: 'error',
 		component: ErrorComponent,
 	},
+
+	{ path: 'notfound', component: NotFoundComponent },
+
 	{ path: '', redirectTo: 'app', pathMatch: 'full' },
 	{ path: '**', redirectTo: 'app' },
 ];
