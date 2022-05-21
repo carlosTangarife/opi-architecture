@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class HeaderInterceptor implements HttpInterceptor {
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		console.log('======================= interceptor =======================')
 		let contentType = 'application/json';
 		if (req.headers.has('Content-Type')){
 			contentType = req.headers.get('Content-Type') || contentType;
@@ -17,7 +16,7 @@ export class HeaderInterceptor implements HttpInterceptor {
 				'Content-Type': contentType
 			}
 		});
-		console.log('======================= interceptor =======================', req);
+		console.log('======================= interceptor Header =======================', req);
 
 		return next.handle(req);
 	}

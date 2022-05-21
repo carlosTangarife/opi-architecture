@@ -33,7 +33,7 @@ export class UserListComponent implements OnInit {
   }
 
   async loadUsers(): Promise<void> {
-    this.products = await this.getUsersQueryHandler.execute();
+	this.products = await this.getUsersQueryHandler.execute();
   }
 
   createProduct(): void {
