@@ -1,27 +1,69 @@
 <ng-container *ngIf="userForm">
 	<div class="card">
 		<h5>User</h5>
-		<form class="grid p-fluid mt-3" [formGroup]="userForm" autocomplete="off" novalidate (ngSubmit)="onSubmit()">
+		<form
+			class="grid p-fluid mt-3"
+			[formGroup]="userForm"
+			autocomplete="off"
+			novalidate
+			(ngSubmit)="onSubmit()"
+		>
 			<div class="field col-12 md:col-6">
 				<span class="p-float-label">
-				<input type="text" pInputText formControlName="firstName" name="firstName" id="firstName">
-				<label for="firstName">First Name</label>
+					<input
+						type="text"
+						pInputText
+						formControlName="firstName"
+						name="firstName"
+						id="firstName"
+					/>
+					<label for="firstName">First Name</label>
+					<div class='p-error' *ngIf='firstName?.invalid && (firstName?.dirty)'>
+						<small>
+							* The first name is required
+						</small>
+					</div>
 				</span>
 			</div>
-		
+
 			<div class="field col-12 md:col-6">
 				<span class="p-float-label">
-				<input type="text" pInputText formControlName="lastName" name="lastName" id="lastName">
-				<label for="lastName">Last Name</label>
+					<input
+						type="text"
+						pInputText
+						formControlName="lastName"
+						name="lastName"
+						id="lastName"
+						class="p-invalid"
+					/>
+					<label for="lastName">Last Name</label>
+
+					<div class='p-error' *ngIf='lastName?.invalid && (lastName?.dirty)'>
+						<small  *ngIf='lastName?.errors?.required'>
+							* The last name is required
+						</small>
+					</div>
 				</span>
 			</div>
-		
-			<button *ngIf="userForm?.invalid; else valid" pButton type="button" label="CREATE" class="p-button-raised p-button-rounded" disabled></button>
-		
+
+			<button
+				*ngIf="userForm?.invalid; else valid"
+				pButton
+				type="button"
+				label="CREATE"
+				class="p-button-raised p-button-rounded"
+				disabled
+			></button>
+
 			<ng-template #valid>
-				<button type="submit"pButton type="submit" label="CREATE" class="p-button-raised p-button-rounded"></button>
+				<button
+					type="submit"
+					pButton
+					type="submit"
+					label="CREATE"
+					class="p-button-raised p-button-rounded"
+				></button>
 			</ng-template>
 		</form>
 	</div>
 </ng-container>
-
