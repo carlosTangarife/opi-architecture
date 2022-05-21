@@ -7,19 +7,20 @@ import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { ArchimedesModule } from './archimedes/archimedes.module';
+import { APP_CONFIG } from '@opi/config';
+import { environment } from '../environments/environment.prod';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-		ArchimedesModule
-    ],
-    declarations: [
-        AppComponent,
-    ],
-    bootstrap: [AppComponent]
+	imports: [
+		BrowserModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		BrowserAnimationsModule,
+		ArchimedesModule,
+	],
+	declarations: [AppComponent],
+	providers: [{ provide: APP_CONFIG, useValue: environment }],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
