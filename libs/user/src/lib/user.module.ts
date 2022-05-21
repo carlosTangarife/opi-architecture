@@ -1,12 +1,10 @@
 
 
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CacheInvalidations } from '@archimedes/arch';
 
-import { PrimengModule } from './primeng.module';
 import { UserRoutingModule } from './user.routing';
 import {
     CreateUserCommandHandler, DeleteUserCommandHandler, EditUserCommandHandler, GetUserQueryHandler,
@@ -14,6 +12,7 @@ import {
 } from './user/application';
 import { UserRepository } from './user/repository';
 import { UserCreateComponent, UserDetailsComponent, UserListComponent } from './user/ui';
+import { PrimengModule } from './primeng.module';
 
 @NgModule({
   imports: [
@@ -21,8 +20,7 @@ import { UserCreateComponent, UserDetailsComponent, UserListComponent } from './
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    PrimengModule
+	PrimengModule
   ],
   declarations: [UserCreateComponent, UserDetailsComponent, UserListComponent],
   providers: [

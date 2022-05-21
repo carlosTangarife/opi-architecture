@@ -1,5 +1,4 @@
-import { lastValueFrom, tap } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { lastValueFrom } from 'rxjs';
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,7 +8,7 @@ export interface Options {
 	params?: HttpParams;
 }
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class HttpService {
 	constructor(private readonly http: HttpClient) {}
 
