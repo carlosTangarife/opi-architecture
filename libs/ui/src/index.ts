@@ -19,3 +19,5 @@ export * from './lib/float-layout/float-layout.component';
 export * from './lib/float-label/float-label.component';
 
 export * from './lib/form-layout/form-layout.component';
+
+export * from './lib/login/login.component';

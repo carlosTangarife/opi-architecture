@@ -11,6 +11,7 @@ import { FloatLayoutComponent } from './float-layout/float-layout.component';
 import { FloatLabelComponent } from './float-label/float-label.component';
 import { FormLayoutComponent } from './form-layout/form-layout.component';
 import { PrimengModule } from './primeng.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
 	imports: [CommonModule, PrimengModule],
@@ -25,6 +26,7 @@ import { PrimengModule } from './primeng.module';
 		FloatLayoutComponent,
 		FloatLabelComponent,
 		FormLayoutComponent,
+		LoginComponent,
 	],
 	exports: [
 		ButtonComponent,
@@ -37,6 +39,7 @@ import { PrimengModule } from './primeng.module';
 		FloatLayoutComponent,
 		FloatLabelComponent,
 		FormLayoutComponent,
+		LoginComponent
 	],
 })
 export class UiModule {}

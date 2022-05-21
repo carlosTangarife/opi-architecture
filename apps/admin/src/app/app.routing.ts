@@ -1,12 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AccessComponent, EmptyComponent, ErrorComponent } from '@opi/ui';
+import { AccessComponent, EmptyComponent, ErrorComponent, LoginComponent } from '@opi/ui';
 
 const ROUTES: Routes = [
 	{
 		path: 'app',
 		loadChildren: () => import('@opi/layout').then((m) => m.LayoutModule),
 
+	},
+	{
+		path: 'login',
+		component: LoginComponent,
 	},
 	{
 		path: 'access',
