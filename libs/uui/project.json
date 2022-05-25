@@ -16,6 +16,42 @@
 			"options": {
 				"lintFilePatterns": ["libs/uui/**/*.ts", "libs/uui/**/*.html"]
 			}
+		},
+		"storybook": {
+			"executor": "@storybook/angular:start-storybook",
+			"options": {
+				"port": 4400,
+				"configDir": "libs/uui/.storybook",
+				"browserTarget": "uui:build-storybook",
+				"compodoc": false,
+				"styles": [
+					"node_modules/prismjs/themes/prism-coy.css",
+					"node_modules/primeng/resources/primeng.min.css",
+					"node_modules/primeflex/primeflex.scss",
+					"node_modules/primeicons/primeicons.css",
+					"apps/admin/src/assets/theme/lara-light-indigo/theme.css"
+				]
+			},
+			"configurations": {
+				"ci": {
+					"quiet": true
+				}
+			}
+		},
+		"build-storybook": {
+			"executor": "@storybook/angular:build-storybook",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputDir": "dist/storybook/uui",
+				"configDir": "libs/uui/.storybook",
+				"browserTarget": "uui:build-storybook",
+				"compodoc": false
+			},
+			"configurations": {
+				"ci": {
+					"quiet": true
+				}
+			}
 		}
 	},
 	"tags": []
