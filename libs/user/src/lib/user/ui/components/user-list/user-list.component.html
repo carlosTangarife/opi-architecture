@@ -6,12 +6,12 @@
   </p-toolbar>
 
   <p-table #dt
-      [value]="products"
+      [value]="users"
       [rows]="10"
       [paginator]="true"
       [globalFilterFields]="['firstName', 'lastName']"
       responsiveLayout="scroll"
-      [(selection)]="selectedProducts"
+      [(selection)]="selectedUsers"
       [rowHover]="true"
       dataKey="id"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -19,7 +19,7 @@
 
       <ng-template pTemplate="caption">
           <div class="flex align-items-center justify-content-between">
-              <h5 class="m-0">Manage Products</h5>
+              <h5 class="m-0">Manage Users</h5>
               <span class="p-input-icon-left">
                   <i class="pi pi-search"></i>
                   <!-- <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." /> -->
@@ -47,7 +47,7 @@
       </ng-template>
       <ng-template pTemplate="summary">
           <div class="flex align-items-center justify-content-between">
-              In total there are {{products ? products.length : 0 }} products.
+              In total there are {{users ? users.length : 0 }} users.
           </div>
       </ng-template>
   </p-table>

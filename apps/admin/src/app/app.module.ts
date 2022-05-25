@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { ArchimedesModule } from './archimedes/archimedes.module';
 import { APP_CONFIG } from '@opi/config';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 import { OpiHttpModule } from '@opi/opi-http';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';

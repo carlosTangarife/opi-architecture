@@ -14,9 +14,9 @@ import { UserModel } from '../../../domain/user.model';
 export class UserListComponent implements OnInit {
   productDialog!: boolean;
 
-  products!: UserModel[];
+  users!: UserModel[];
 
-  selectedProducts!: UserModel[];
+  selectedUsers!: UserModel[];
 
   submitted!: boolean;
 
@@ -33,7 +33,7 @@ export class UserListComponent implements OnInit {
   }
 
   async loadUsers(): Promise<void> {
-	this.products = await this.getUsersQueryHandler.execute();
+	this.users = await this.getUsersQueryHandler.execute();
   }
 
   createProduct(): void {
