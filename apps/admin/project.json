@@ -13,10 +13,7 @@
 				"polyfills": "apps/admin/src/polyfills.ts",
 				"tsConfig": "apps/admin/tsconfig.app.json",
 				"inlineStyleLanguage": "scss",
-				"assets": [
-					"apps/admin/src/favicon.ico",
-					"apps/admin/src/assets"
-				],
+				"assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
 				"styles": [
 					"apps/admin/src/styles.scss",
 					"node_modules/prismjs/themes/prism-coy.css",
@@ -84,10 +81,7 @@
 		"lint": {
 			"executor": "@nrwl/linter:eslint",
 			"options": {
-				"lintFilePatterns": [
-					"apps/admin/**/*.ts",
-					"apps/admin/**/*.html"
-				]
+				"lintFilePatterns": ["apps/admin/**/*.ts", "apps/admin/**/*.html"]
 			}
 		},
 		"test": {

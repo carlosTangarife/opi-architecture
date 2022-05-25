@@ -1,20 +1,20 @@
 {
 	"projectType": "library",
-	"sourceRoot": "libs/layout/src",
+	"sourceRoot": "libs/uui/src",
 	"prefix": "opi",
 	"targets": {
 		"test": {
 			"executor": "@nrwl/jest:jest",
-			"outputs": ["coverage/libs/layout"],
+			"outputs": ["coverage/libs/uui"],
 			"options": {
-				"jestConfig": "libs/layout/jest.config.ts",
+				"jestConfig": "libs/uui/jest.config.ts",
 				"passWithNoTests": true
 			}
 		},
 		"lint": {
 			"executor": "@nrwl/linter:eslint",
 			"options": {
-				"lintFilePatterns": ["libs/layout/**/*.ts", "libs/layout/**/*.html"]
+				"lintFilePatterns": ["libs/uui/**/*.ts", "libs/uui/**/*.html"]
 			}
 		}
 	},

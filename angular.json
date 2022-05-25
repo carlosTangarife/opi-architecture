@@ -6,6 +6,7 @@
 		"layout": "libs/layout",
 		"opi-http": "libs/opi-http",
 		"ui": "libs/ui",
-		"user": "libs/user"
+		"user": "libs/user",
+		"uui": "libs/uui"
 	}
 }
