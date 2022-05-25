@@ -104,13 +104,13 @@ Teams using Nx gain the advantage of building full-stack applications with their
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
 
+nx generate @nrwl/angular:lib ui
 
 nx generate @nrwl/angular:component login --project=ui --module ui 
-nx generate @nrwl/angular:component not-found --project=ui --module ui --export
 
 nx generate @nrwl/angular:component not-found --project=ui --module ui --export
-
 
 nx generate @nrwl/angular:lib opi-http
+
 nx generate @nrwl/angular:service http-service --project=opi-http
 
