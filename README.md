@@ -106,6 +106,10 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 nx generate @nrwl/angular:lib ui
 
+npm install --dev @nrwl/storybook
+
+nx g @nrwl/angular:storybook-configuration ui
+
 nx generate @nrwl/angular:component login --project=ui --module ui 
 
 nx generate @nrwl/angular:component not-found --project=ui --module ui --export
